@@ -1888,13 +1888,14 @@
         <div class="footer-main">
             <div class="footer-grid">
                 <div class="footer-column footer-brand">
-                    <h2>Magic Chef Appliance Repair</h2>
-                    <p><strong>New York City, New York</strong></p>
-                    <p>440 Madison Avenue<br>New York, NY 10016</p>
-                    <p style="margin-top: 15px;">Certified Magic Chef appliance repair serving all of NYC. Same-day service available.</p>
+                    <h2>Magic Chef Appliance Repair NYC</h2>
+                    <p>Dedicated appliance repair specialists serving New York City. Our certified technicians bring expertise in all Magic Chef models, from kitchen essentials to laundry systems.</p>
+                    <p>We understand appliance disruptions affect daily routines—our rapid response team works to restore your appliances quickly and correctly the first time.</p>
                     <div class="footer-hours">
-                        <p><strong>Business Hours</strong></p>
-                        <p>Monday - Sunday<br>7:00 AM – 9:00 PM</p>
+                        <p><strong>Service Hours:</strong></p>
+                        <p>Monday - Friday: 7am - 9pm</p>
+                        <p>Saturday: 8am - 6pm</p>
+                        <p>Sunday: 9am - 5pm</p>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1904,36 +1905,25 @@
                         <li><a href="appliances/dryer/">Dryer Repair</a></li>
                         <li><a href="appliances/refrigerator/">Refrigerator Repair</a></li>
                         <li><a href="appliances/dishwasher/">Dishwasher Repair</a></li>
-                        <li><a href="appliances/oven/">Oven Repair</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>More Services</h3>
-                    <ul>
+                        <li><a href="appliances/oven/">Oven & Range Repair</a></li>
                         <li><a href="appliances/cooktop/">Cooktop Repair</a></li>
                         <li><a href="appliances/microwave/">Microwave Repair</a></li>
-                        <li><a href="appliances/wine-cooler/">Wine Cooler Repair</a></li>
-                        <li><a href="appliances/hood-vent/">Vent Hood Repair</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Service Areas</h3>
+                    <h3>NYC Boroughs</h3>
                     <ul>
                         <li><a href="manhattan/">Manhattan</a></li>
                         <li><a href="brooklyn/">Brooklyn</a></li>
                         <li><a href="queens/">Queens</a></li>
                         <li><a href="bronx/">Bronx</a></li>
-                        <li><a href="./">Home</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3>Other Appliances</h3>
                     <ul>
-                        <li><span class="footer-nolink">Home</span></li>
-                        <li><span class="footer-nolink">Service Areas</span></li>
-                        <li><span class="footer-nolink">Schedule Service</span></li>
-                        <li><span class="footer-nolink">Privacy Policy</span></li>
-                        <li><span class="footer-nolink">Terms of Service</span></li>
+                        <li><a href="appliances/wine-cooler/">Wine Cooler Repair</a></li>
+                        <li><a href="appliances/hood-vent/">Hood Vent Repair</a></li>
                     </ul>
                 </div>
             </div>
@@ -1947,8 +1937,8 @@
                     <a href="queens/">Queens</a>
                     <a href="bronx/">Bronx</a>
                 </div>
-                <p>© 2025 Magic Chef Appliance Repair NYC. All Rights Reserved.</p>
-                <p>Licensed & Insured • Factory Certified Technicians • Same-Day Service Available</p>
+                <p>© 2025 Magic Chef Appliance Repair NYC. All rights reserved.</p>
+                <p>Independent appliance repair service. Not affiliated with Magic Chef or Whirlpool Corporation.</p>
             </div>
         </div>
     </footer>
@@ -1962,21 +1952,16 @@
             var p1 = String.fromCharCode(56,48,48);
             var p2 = String.fromCharCode(51,54,56);
             var p3 = String.fromCharCode(49,57,53,56);
-            var phoneRevealed = false;
-            var clickCount = 0;
-            var clickTimer = null;
-            
+            var phoneRevealed = false;            
             function revealPhone() {
-                if (!phoneRevealed) {
-                    var num = "(" + p1 + ") " + p2 + "-" + p3;
-                    phoneRevealed = true;
-                    var ids = [defined.navBtn, defined.formBtn, defined.heroBtn];
-                    for (var i = 0; i < ids.length; i++) {
-                        var btn = document.getElementById(ids[i]);
-                        if (btn) {
-                            btn.innerHTML = '<span style="margin-right:8px;">&#128222;</span>' + num;
-                            btn.style.letterSpacing = "0.5px";
-                        }
+                var num = "(" + p1 + ") " + p2 + "-" + p3;
+                phoneRevealed = true;
+                var ids = [defined.navBtn, defined.formBtn, defined.heroBtn];
+                for (var i = 0; i < ids.length; i++) {
+                    var btn = document.getElementById(ids[i]);
+                    if (btn) {
+                        btn.innerHTML = '<span style="margin-right:8px;">&#128222;</span>' + num;
+                        btn.style.letterSpacing = "0.5px";
                     }
                 }
             }
@@ -1989,16 +1974,7 @@
                 e.preventDefault();
                 if (phoneRevealed) {
                     triggerCall();
-                    return;
-                }
-                clickCount++;
-                if (clickCount === 1) {
-                    clickTimer = setTimeout(function() {
-                        clickCount = 0;
-                    }, 400);
-                } else if (clickCount === 2) {
-                    clearTimeout(clickTimer);
-                    clickCount = 0;
+                } else {
                     revealPhone();
                 }
             }
