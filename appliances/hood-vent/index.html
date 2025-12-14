@@ -1774,50 +1774,50 @@
         </div>
     </footer>
     <script>
-        const defined = {
-            navBtn: "navCallNow",
-            formBtn: "formCallNow",
-            heroBtn: "heroCallNow"
-        };
-        const p1 = String.fromCharCode(56,48,48);
-        const p2 = String.fromCharCode(51,54,56);
-        const p3 = String.fromCharCode(49,57,53,56);
-        let phoneRevealed = false;
-        
-        function revealPhone(el) {
-            if (!phoneRevealed) {
-                const num = "(" + p1 + ") " + p2 + "-" + p3;
-                el.innerHTML = '<span style="margin-right:8px;">&#128222;</span>' + num;
-                el.style.letterSpacing = "0.5px";
-                phoneRevealed = true;
-                Object.values(defined).forEach(id => {
-                    const btn = document.getElementById(id);
-                    if (btn && btn !== el) {
-                        btn.innerHTML = '<span style="margin-right:8px;">&#128222;</span>' + num;
-                        btn.style.letterSpacing = "0.5px";
-                    }
-                });
+        document.addEventListener("DOMContentLoaded", function() {
+            const defined = {
+                navBtn: "navCallNow",
+                formBtn: "formCallNow",
+                heroBtn: "heroCallNow"
+            };
+            const p1 = String.fromCharCode(56,48,48);
+            const p2 = String.fromCharCode(51,54,56);
+            const p3 = String.fromCharCode(49,57,53,56);
+            let phoneRevealed = false;
+            
+            function revealPhone(el) {
+                if (!phoneRevealed) {
+                    const num = "(" + p1 + ") " + p2 + "-" + p3;
+                    phoneRevealed = true;
+                    Object.values(defined).forEach(function(id) {
+                        const btn = document.getElementById(id);
+                        if (btn) {
+                            btn.innerHTML = '<span style="margin-right:8px;">&#128222;</span>' + num;
+                            btn.style.letterSpacing = "0.5px";
+                        }
+                    });
+                }
             }
-        }
-        
-        function triggerCall() {
-            window.location.href = "tel:+1" + p1 + p2 + p3;
-        }
-        
-        Object.values(defined).forEach(id => {
-            const el = document.getElementById(id);
-            if (el) {
-                el.addEventListener("dblclick", function(e) {
-                    e.preventDefault();
-                    revealPhone(el);
-                });
-                el.addEventListener("click", function(e) {
-                    if (phoneRevealed) {
-                        triggerCall();
-                    }
-                });
-                el.title = "Double-click to reveal number";
+            
+            function triggerCall() {
+                window.location.href = "tel:+1" + p1 + p2 + p3;
             }
+            
+            Object.values(defined).forEach(function(id) {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.addEventListener("dblclick", function(e) {
+                        e.preventDefault();
+                        revealPhone(el);
+                    });
+                    el.addEventListener("click", function(e) {
+                        if (phoneRevealed) {
+                            triggerCall();
+                        }
+                    });
+                    el.title = "Double-click to reveal number";
+                }
+            });
         });
         function toggleService(btn) {
             const card = btn.closest(".service");
