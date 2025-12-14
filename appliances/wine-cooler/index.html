@@ -952,7 +952,125 @@
         [id^="expandable-text-"]::-webkit-scrollbar-thumb:hover {
             background: #001a4d;
         }
+    
+        /* Trust Badges */
+        .trust-badges-section {
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .trust-badges-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #003087;
+            font-size: 28px;
+        }
+        .trust-badges-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-wrap: nowrap;
+            gap: 12px;
+            padding: 20px 10px;
+            background-color: #fff;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .trust-badges-container::-webkit-scrollbar { display: none; }
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            flex: 0 0 auto;
+            width: 160px;
+            min-height: 220px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+        .trust-badge:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            border-color: #003087;
+        }
+        .trust-badge.experience-background,
+        .trust-badge.same-day-background,
+        .trust-badge.guarantee-background,
+        .trust-badge.complete-day-background,
+        .trust-badge.warranty-background,
+        .trust-badge.background-checked-background,
+        .trust-badge.weekend-background,
+        .trust-badge.parts-background,
+        .trust-badge.insured-background,
+        .trust-badge.safety-background { background-color: #e8f1fa; }
+        .trust-badge .icon { font-size: 28px; margin-bottom: 8px; color: #003087; }
+        .trust-badge:hover .icon { color: #e31837; }
+        .trust-badge .title { font-size: 13px; font-weight: bold; color: #333; margin: 0 0 8px; }
+        .trust-badge .description { font-size: 11px; color: #555; line-height: 1.3; margin-bottom: 8px; white-space: normal; }
+        .trust-badge .toggle-button {
+            margin-top: auto;
+            padding: 8px 12px;
+            border: none;
+            background: linear-gradient(45deg, #003087, #e31837);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            width: 100%;
+        }
+        .trust-badge .toggle-button:hover {
+            background: linear-gradient(45deg, #002266, #c41530);
+            transform: translateY(-2px);
+        }
+        .badge-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            z-index: 10000;
+            padding: 24px;
+        }
+        .badge-modal.active { display: block; }
+        .badge-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+        }
+        .badge-modal-overlay.active { display: block; }
+        .badge-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        .badge-modal-title { font-size: 18px; font-weight: bold; margin-bottom: 12px; color: #003087; }
+        .badge-modal-content { font-size: 14px; line-height: 1.6; color: #444; }
+
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -1709,6 +1827,81 @@
         </div>
     </section>
     </main>
+
+    <section class="trust-badges-section">
+        <h2>Certified Magic Chef Appliance Repair Service</h2>
+        <div class="trust-badges-container">
+            <div class="trust-badge guarantee-badge guarantee-background">
+                <i class="fas fa-money-bill-alt icon"></i>
+                <div class="title">Money-Back Guarantee</div>
+                <div class="description">Full refund if we can't repair your appliance.</div>
+                <button class="toggle-button" data-title="Money-Back Guarantee" data-details="We understand the frustration of dealing with companies that charge for repairs they can't complete. That's why we offer a 100% Money-Back Guarantee. If we are unable to complete your appliance repair, you will receive a full refund—no questions asked.">Learn More</button>
+            </div>
+            <div class="trust-badge experience-badge experience-background">
+                <i class="fas fa-tools icon"></i>
+                <div class="title">25+ Years Experience</div>
+                <div class="description">Expert Magic Chef repair since 1999.</div>
+                <button class="toggle-button" data-title="25+ Years Experience" data-details="With over two decades of experience, our team has mastered Magic Chef appliance repair. We've tackled every challenge, from vintage models to the latest smart appliances, ensuring your appliances run smoothly.">Learn More</button>
+            </div>
+            <div class="trust-badge same-day-badge same-day-background">
+                <i class="fas fa-clock icon"></i>
+                <div class="title">Same-Day Service</div>
+                <div class="description">Fast repairs in hours, not days.</div>
+                <button class="toggle-button" data-title="Same-Day Service" data-details="We know a broken appliance disrupts your daily routine, so we prioritize speed without sacrificing quality. Our same-day service ensures technicians arrive promptly, equipped to diagnose and fix your Magic Chef appliance in hours.">Learn More</button>
+            </div>
+            <div class="trust-badge complete-day-badge complete-day-background">
+                <i class="fas fa-check-circle icon"></i>
+                <div class="title">85% Same-Day Repairs</div>
+                <div class="description">Most repairs done the day you call.</div>
+                <button class="toggle-button" data-title="85% Same-Day Repairs" data-details="Our efficiency sets us apart—85% of our repairs are completed the same day you reach out. We stock common Magic Chef parts and equip our technicians with advanced tools to resolve issues on the spot.">Learn More</button>
+            </div>
+            <div class="trust-badge warranty-badge warranty-background">
+                <i class="fas fa-shield-alt icon"></i>
+                <div class="title">Warranty on All Repairs</div>
+                <div class="description">All repairs backed by our warranty.</div>
+                <button class="toggle-button" data-title="Warranty on All Repairs" data-details="Every repair we perform comes with a comprehensive warranty, ensuring your peace of mind. If an issue arises from our work, we'll return to fix it at no extra cost.">Learn More</button>
+            </div>
+            <div class="trust-badge background-checked-badge background-checked-background">
+                <i class="fas fa-user-check icon"></i>
+                <div class="title">Background Checked</div>
+                <div class="description">Screened for your safety.</div>
+                <button class="toggle-button" data-title="Background Checked Technicians" data-details="Your safety is our priority, which is why all our technicians undergo thorough background checks. We hire only trustworthy professionals who are not only skilled but also respectful of your home.">Learn More</button>
+            </div>
+            <div class="trust-badge weekend-badge weekend-background">
+                <i class="fas fa-calendar-alt icon"></i>
+                <div class="title">Weekend Service</div>
+                <div class="description">Repairs available on weekends.</div>
+                <button class="toggle-button" data-title="Weekend Service Available" data-details="Life doesn't pause on weekends, and neither do we. Our weekend service ensures you can schedule repairs at your convenience, without disrupting your workweek.">Learn More</button>
+            </div>
+            <div class="trust-badge parts-badge parts-background">
+                <i class="fas fa-cogs icon"></i>
+                <div class="title">Genuine Magic Chef Parts</div>
+                <div class="description">OEM parts at fair prices.</div>
+                <button class="toggle-button" data-title="Genuine Magic Chef Parts" data-details="We use only genuine Magic Chef parts, ensuring optimal performance and longevity. Our transparent pricing means you get high-quality components without inflated costs.">Learn More</button>
+            </div>
+            <div class="trust-badge insured-badge insured-background">
+                <i class="fas fa-umbrella icon"></i>
+                <div class="title">Fully Insured</div>
+                <div class="description">Coverage for property damages.</div>
+                <button class="toggle-button" data-title="Fully Insured" data-details="We are fully insured for property damages, providing you with peace of mind during every repair. Our comprehensive insurance coverage ensures that any unexpected incidents are handled responsibly.">Learn More</button>
+            </div>
+            <div class="trust-badge safety-badge safety-background">
+                <i class="fas fa-hard-hat icon"></i>
+                <div class="title">Safety & Protection</div>
+                <div class="description">Floor & area protection used.</div>
+                <button class="toggle-button" data-title="Safety & Protection" data-details="We prioritize your safety and the protection of your home. Our technicians use floor coverings and area protection to prevent any damage during repairs.">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Badge Modal -->
+    <div class="badge-modal" id="badgeModal">
+        <button class="badge-modal-close" onclick="closeBadgeModal()">&times;</button>
+        <h3 class="badge-modal-title" id="badgeModalTitle"></h3>
+        <div class="badge-modal-content" id="badgeModalContent"></div>
+    </div>
+    <div class="badge-modal-overlay" id="badgeModalOverlay" onclick="closeBadgeModal()"></div>
+
     <footer>
         <div class="footer-main">
             <div class="footer-grid">
@@ -1936,6 +2129,28 @@
                 this.classList.toggle("show-zip");
             });
         });
+    
+        // Badge Modal Functions
+        document.querySelectorAll('.trust-badge .toggle-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const title = this.getAttribute('data-title');
+                const details = this.getAttribute('data-details');
+                document.getElementById('badgeModalTitle').textContent = title;
+                document.getElementById('badgeModalContent').textContent = details;
+                document.getElementById('badgeModal').classList.add('active');
+                document.getElementById('badgeModalOverlay').classList.add('active');
+            });
+        });
+
+        function closeBadgeModal() {
+            document.getElementById('badgeModal').classList.remove('active');
+            document.getElementById('badgeModalOverlay').classList.remove('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeBadgeModal();
+        });
+
     </script>
 </body>
 </html>
