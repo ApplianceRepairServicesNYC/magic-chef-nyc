@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -1012,11 +1013,30 @@
 <body>
     <header>
         <div class="container nav-wrapper">
-            <a href="https://magicchefappliancerepairnyc.com/" class="logo-link" aria-label="Return to Magic Chef Appliance Repair NYC Homepage"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 45" height="45">
-          <rect x="0" y="5" width="35" height="35" rx="17.5" fill="#CC0000"/>
-          <text x="17.5" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">MC</text>
-          <text x="45" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">MAGIC CHEF</text>
-          <text x="45" y="36" font-family="Arial, sans-serif" font-size="10" fill="#ffcccc">APPLIANCE REPAIR NYC</text>
+            <a href="https://magicchefappliancerepairnyc.com/" class="logo-link" aria-label="Return to Magic Chef Appliance Repair NYC Homepage"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 50" height="50">
+          <!-- Chef Character -->
+          <g fill="white">
+            <!-- Chef Hat -->
+            <ellipse cx="22" cy="8" rx="10" ry="6"/>
+            <rect x="14" y="7" width="16" height="4" rx="1"/>
+            <ellipse cx="22" cy="11" rx="8" ry="3"/>
+            <!-- Head -->
+            <circle cx="22" cy="18" r="5"/>
+            <!-- Body -->
+            <ellipse cx="22" cy="30" rx="6" ry="8"/>
+            <!-- Left Arm (raised) -->
+            <path d="M16 24 Q8 18 6 12 Q5 10 7 9 Q9 8 10 10 Q12 14 18 22" fill="white"/>
+            <!-- Right Arm -->
+            <path d="M28 24 Q34 22 38 26 Q40 28 38 30 Q36 32 32 28 Q30 26 28 26" fill="white"/>
+            <!-- Left Leg -->
+            <path d="M18 36 Q14 42 12 46 Q11 48 13 48 Q15 48 17 44 Q19 40 20 38" fill="white"/>
+            <!-- Right Leg -->
+            <path d="M26 36 Q30 40 34 44 Q36 46 34 47 Q32 48 30 45 Q27 41 25 38" fill="white"/>
+          </g>
+          <!-- Magic Chef Text -->
+          <text x="52" y="24" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="bold" fill="white" letter-spacing="1">Magic Chef</text>
+          <!-- Tagline -->
+          <text x="52" y="40" font-family="Arial, sans-serif" font-size="11" fill="#ffcccc" letter-spacing="0.5">APPLIANCE REPAIR NYC</text>
         </svg></a>
             <div class="nav-right">
                 <div class="services-menu" id="servicesMenu">
@@ -2221,5 +2241,6 @@
     <script>var emailjs=function(e){"use strict";class t{constructor(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"Network Error";this.status=e,this.text=t}}const i={origin:"https://api.emailjs.com",blockHeadless:!1,storageProvider:(()=>{if("undefined"!=typeof localStorage)return{get:e=>Promise.resolve(localStorage.getItem(e)),set:(e,t)=>Promise.resolve(localStorage.setItem(e,t)),remove:e=>Promise.resolve(localStorage.removeItem(e))}})()},r=e=>e?"string"==typeof e?{publicKey:e}:"[object Object]"===e.toString()?e:{}:{},o=function(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"https://api.emailjs.com";if(!e)return;const o=r(e);i.publicKey=o.publicKey,i.blockHeadless=o.blockHeadless,i.storageProvider=o.storageProvider,i.blockList=o.blockList,i.limitRate=o.limitRate,i.origin=o.origin||t},a=async function(e,r){let o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};const a=await fetch(i.origin+e,{method:"POST",headers:o,body:r}),s=await a.text(),n=new t(a.status,s);if(a.ok)return n;throw n},s=(e,t,i)=>{if(!e||"string"!=typeof e)throw"The public key is required. Visit https://dashboard.emailjs.com/admin/account";if(!t||"string"!=typeof t)throw"The service ID is required. Visit https://dashboard.emailjs.com/admin";if(!i||"string"!=typeof i)throw"The template ID is required. Visit https://dashboard.emailjs.com/admin/templates"},n=e=>e.webdriver||!e.languages||0===e.languages.length,l=()=>new t(451,"Unavailable For Headless Browser"),c=(e,t)=>{if((e=>!e.list?.length||!e.watchVariable)(e))return!1;((e,t)=>{if(!Array.isArray(e))throw"The BlockList list has to be an array";if("string"!=typeof t)throw"The BlockList watchVariable has to be a string"})(e.list,e.watchVariable);const i=(r=t,o=e.watchVariable,r instanceof FormData?r.get(o):r[o]);var r,o;return"string"==typeof i&&e.list.includes(i)},d=()=>new t(403,"Forbidden"),m=async(e,t,i)=>{if(!t.throttle||!i)return!1;((e,t)=>{if("number"!=typeof e||e<0)throw"The LimitRate throttle has to be a positive number";if(t&&"string"!=typeof t)throw"The LimitRate ID has to be a non-empty string"})(t.throttle,t.id);const r=t.id||e,o=await(async(e,t,i)=>{const r=Number(await i.get(e)||0);return t-Date.now()+r})(r,t.throttle,i);return o>0||(await i.set(r,Date.now().toString()),!1)},h=()=>new t(429,"Too Many Requests"),p=async(e,t,o,p)=>{const u=r(p),b=u.publicKey||i.publicKey,g=u.blockHeadless||i.blockHeadless,f=u.storageProvider||i.storageProvider,w={...i.blockList,...u.blockList},y={...i.limitRate,...u.limitRate};if(g&&n(navigator))return Promise.reject(l());if(s(b,e,t),(e=>{if(e&&"[object Object]"!==e.toString())throw"The template params have to be the object. Visit https://www.emailjs.com/docs/sdk/send/"})(o),o&&c(w,o))return Promise.reject(d());if(await m(location.pathname,y,f))return Promise.reject(h());const v={lib_version:"4.4.1",user_id:b,service_id:e,template_id:t,template_params:o};return a("/api/v1.0/email/send",JSON.stringify(v),{"Content-type":"application/json"})},u=async(e,t,o,p)=>{const u=r(p),b=u.publicKey||i.publicKey,g=u.blockHeadless||i.blockHeadless,f=i.storageProvider||u.storageProvider,w={...i.blockList,...u.blockList},y={...i.limitRate,...u.limitRate};if(g&&n(navigator))return Promise.reject(l());const v=(e=>"string"==typeof e?document.querySelector(e):e)(o);s(b,e,t),(e=>{if(!e||"FORM"!==e.nodeName)throw"The 3rd parameter is expected to be the HTML form element or the style selector of the form"})(v);const j=new FormData(v);return c(w,j)?Promise.reject(d()):await m(location.pathname,y,f)?Promise.reject(h()):(j.append("lib_version","4.4.1"),j.append("service_id",e),j.append("template_id",t),j.append("user_id",b),a("/api/v1.0/email/send-form",j))};var b={init:o,send:p,sendForm:u,EmailJSResponseStatus:t};return e.EmailJSResponseStatus=t,e.default=b,e.init=o,e.send=p,e.sendForm=u,Object.defineProperty(e,"__esModule",{value:!0}),e}({});emailjs.init({publicKey:'zfCrLmZU8eK9CuZcs'});</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c124-171-7689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f408497346e04e29b69182b74a219630","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c124-171-7689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f408497346e04e29b69182b74a219630","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"c8fe08c5cbc7499480d609e68b3d33cc","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
