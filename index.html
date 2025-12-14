@@ -1082,10 +1082,10 @@
                         </div>
                         <li class="submenu-toggle" id="serviceAreasToggle">Service Areas</li>
                         <div class="service-areas-submenu" id="serviceAreasSubmenu">
-                            <li><span class="nav-nolink">Manhattan</span></li>
-                            <li><span class="nav-nolink">Brooklyn</span></li>
-                            <li><span class="nav-nolink">Queens</span></li>
-                            <li><span class="nav-nolink">Bronx</span></li>
+                            <li><a href="manhattan/">Manhattan</a></li>
+                            <li><a href="brooklyn/">Brooklyn</a></li>
+                            <li><a href="queens/">Queens</a></li>
+                            <li><a href="bronx/">Bronx</a></li>
                         </div>
                     </ul>
                 </div>
@@ -2005,6 +2005,17 @@
                 servicesToggle.addEventListener('click', function(e) {
                     e.stopPropagation();
                     servicesMenu.classList.toggle('active');
+                });
+            }
+            
+            // Allow clicks on dropdown links to work
+            const servicesDropdown = document.getElementById('servicesDropdown');
+            if (servicesDropdown) {
+                servicesDropdown.addEventListener('click', function(e) {
+                    // Only stop propagation if not clicking a link
+                    if (e.target.tagName !== 'A') {
+                        e.stopPropagation();
+                    }
                 });
             }
             
