@@ -1117,7 +1117,10 @@
                             <li><a href="../../manhattan/" onclick="event.stopPropagation(); window.location.href='../../manhattan/'; return false;">Manhattan</a></li>
                             <li><a href="../../brooklyn/" onclick="event.stopPropagation(); window.location.href='../../brooklyn/'; return false;">Brooklyn</a></li>
                             <li><a href="../../queens/" onclick="event.stopPropagation(); window.location.href='../../queens/'; return false;">Queens</a></li>
-                            <li><a href="../../bronx/" onclick="event.stopPropagation(); window.location.href='../../bronx/'; return false;">Bronx</a></li>
+                            <li><a href="../../bronx/">Bronx</a>
+                    <a href="#" class="modal-trigger" data-modal="reviewsModal">Reviews</a>
+                    <a href="#" class="modal-trigger" data-modal="privacyModal">Privacy Policy</a>
+                    <a href="#" class="modal-trigger" data-modal="termsModal">Terms of Service</a></li>
                         </div>
                     </ul>
                 </div>
@@ -1907,6 +1910,7 @@
             <div class="footer-grid">
                 <div class="footer-column footer-brand">
                     <div class="footer-title">Magic Chef Appliance Repair NYC</div>
+                    <p><strong>📍 178 Columbus Ave, New York, NY 10023</strong></p>
                     <p>Dedicated appliance repair specialists serving New York City. Our certified technicians bring expertise in all Magic Chef models, from kitchen essentials to laundry systems.</p>
                     <p>We understand appliance disruptions affect daily routines—our rapid response team works to restore your appliances quickly and correctly the first time.</p>
                     <div class="footer-hours">
@@ -1934,7 +1938,10 @@
                         <li><a href="../../manhattan/" onclick="event.stopPropagation(); window.location.href='../../manhattan/'; return false;">Manhattan</a></li>
                         <li><a href="../../brooklyn/" onclick="event.stopPropagation(); window.location.href='../../brooklyn/'; return false;">Brooklyn</a></li>
                         <li><a href="../../queens/" onclick="event.stopPropagation(); window.location.href='../../queens/'; return false;">Queens</a></li>
-                        <li><a href="../../bronx/" onclick="event.stopPropagation(); window.location.href='../../bronx/'; return false;">Bronx</a></li>
+                        <li><a href="../../bronx/">Bronx</a>
+                    <a href="#" class="modal-trigger" data-modal="reviewsModal">Reviews</a>
+                    <a href="#" class="modal-trigger" data-modal="privacyModal">Privacy Policy</a>
+                    <a href="#" class="modal-trigger" data-modal="termsModal">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1953,10 +1960,13 @@
                     <a href="../../manhattan/" onclick="event.stopPropagation(); window.location.href='../../manhattan/'; return false;">Manhattan</a>
                     <a href="../../brooklyn/" onclick="event.stopPropagation(); window.location.href='../../brooklyn/'; return false;">Brooklyn</a>
                     <a href="../../queens/" onclick="event.stopPropagation(); window.location.href='../../queens/'; return false;">Queens</a>
-                    <a href="../../bronx/" onclick="event.stopPropagation(); window.location.href='../../bronx/'; return false;">Bronx</a>
+                    <a href="../../bronx/">Bronx</a>
+                    <a href="#" class="modal-trigger" data-modal="reviewsModal">Reviews</a>
+                    <a href="#" class="modal-trigger" data-modal="privacyModal">Privacy Policy</a>
+                    <a href="#" class="modal-trigger" data-modal="termsModal">Terms of Service</a>
                 </div>
                 <p>© 2025 Magic Chef Appliance Repair NYC. All rights reserved.</p>
-                <p>Certified Service Provider</p>
+                <p>Licensed and Insured • Factory Certified Technicians • Same-Day Service Available</p>
             </div>
         </div>
     </footer>
@@ -2153,5 +2163,175 @@
         });
     </script>
 
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Reviews Modal -->
+    <div class="modal-card" id="reviewsModal">
+        <div class="modal-header">
+            <h2>Customer Reviews</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div id="elfsightContainer">
+                <div class="elfsight-app-2942fb52-4463-41bc-bc83-d831b9da6f0e"></div>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
+                <button id="writeReviewBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
+                <p style="margin-top: 12px; color: #666; font-size: 14px;">Had a great experience? Help others by sharing your story!</p>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
+                <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
+                <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across NYC!</p>
+                <button id="reviewsCallBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Call Toll-Free</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Write Review Modal -->
+    <div class="modal-card" id="writeReviewModal" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Write a Review</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <form id="reviewForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Name *</label>
+                    <input type="text" id="reviewName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Rating *</label>
+                    <div id="starRating" style="display: flex; gap: 8px; font-size: 32px; cursor: pointer;">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <input type="hidden" id="reviewRating" value="0">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Review *</label>
+                    <textarea id="reviewText" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;" placeholder="Tell us about your experience..."></textarea>
+                </div>
+                <button type="submit" style="width: 100%; background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Submit Review</button>
+            </form>
+            <div id="reviewThankYou" style="display: none; text-align: center; padding: 40px 20px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
+                <h3 style="color: #1a1a2e; margin-bottom: 15px;">Thank You for Your Review!</h3>
+                <p style="color: #666;">We appreciate you taking the time to share your experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal-card" id="privacyModal">
+        <div class="modal-header">
+            <h2>Privacy Policy</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p><strong>Last Updated: January 2025</strong></p>
+            <p>Magic Chef Appliance Repair NYC ("we," "our," or "us") is committed to protecting your privacy.</p>
+            <h3>Information We Collect</h3>
+            <ul>
+                <li><strong>Personal Data:</strong> Name, email, phone number when scheduling service.</li>
+                <li><strong>Service Information:</strong> Details about your appliances and repair needs.</li>
+            </ul>
+            <h3>How We Use Your Information</h3>
+            <ul>
+                <li>Provide and improve our repair services</li>
+                <li>Process service requests and send confirmations</li>
+                <li>Respond to your questions and requests</li>
+            </ul>
+            <h3>Contact Us</h3>
+            <p>Questions? Contact us through our website or call our service line.</p>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal-card" id="termsModal">
+        <div class="modal-header">
+            <h2>Terms of Service</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p><strong>Last Updated: January 2025</strong></p>
+            <p>By using our services, you agree to these Terms of Service.</p>
+            <h3>Services</h3>
+            <p>We provide Magic Chef appliance repair in NYC including Manhattan, Brooklyn, Queens, and the Bronx.</p>
+            <h3>Governing Law</h3>
+            <p>These Terms are governed by the laws of the State of New York.</p>
+            <h3>Contact Us</h3>
+            <p>Questions? Contact us through our website or call our service line.</p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        var modalOverlay = document.getElementById('modalOverlay');
+        var reviewsModal = document.getElementById('reviewsModal');
+        var writeReviewModal = document.getElementById('writeReviewModal');
+        var privacyModal = document.getElementById('privacyModal');
+        var termsModal = document.getElementById('termsModal');
+
+        function openModal(modalId) {
+            modalOverlay.classList.add('active');
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAllModals() {
+            if (modalOverlay) modalOverlay.classList.remove('active');
+            if (reviewsModal) reviewsModal.classList.remove('active');
+            if (writeReviewModal) writeReviewModal.classList.remove('active');
+            if (privacyModal) privacyModal.classList.remove('active');
+            if (termsModal) termsModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.modal-trigger').forEach(function(trigger) {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(this.dataset.modal);
+            });
+        });
+
+        document.querySelectorAll('.modal-close').forEach(function(btn) {
+            btn.addEventListener('click', closeAllModals);
+        });
+
+        if (modalOverlay) modalOverlay.addEventListener('click', closeAllModals);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeAllModals();
+        });
+
+        var writeReviewBtn = document.getElementById('writeReviewBtn');
+        if (writeReviewBtn) {
+            writeReviewBtn.addEventListener('click', function() {
+                reviewsModal.classList.remove('active');
+                writeReviewModal.classList.add('active');
+            });
+        }
+
+        var reviewsCallBtn = document.getElementById('reviewsCallBtn');
+        if (reviewsCallBtn) {
+            reviewsCallBtn.addEventListener('click', function() {
+                if (this.dataset.revealed) {
+                    window.location.href = 'tel:+1' + this.dataset.num;
+                    return;
+                }
+                var digits = [8, 0, 0, 7, 7, 8, 3, 5, 7, 2];
+                var num = digits.join('');
+                this.innerHTML = '+1 (' + num.slice(0,3) + ') ' + num.slice(3,6) + '-' + num.slice(6);
+                this.dataset.revealed = 'true';
+                this.dataset.num = num;
+            });
+        }
+    </script>
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </body>
 </html>
