@@ -2040,13 +2040,16 @@
             <div class="footer-bottom-content">
                 <div class="footer-bottom-links">
                     <a href="./">Home</a>
-                    <a href="manhattan/" onclick="event.stopPropagation(); window.location.href='manhattan/'; return false;">Manhattan</a>
-                    <a href="brooklyn/" onclick="event.stopPropagation(); window.location.href='brooklyn/'; return false;">Brooklyn</a>
-                    <a href="queens/" onclick="event.stopPropagation(); window.location.href='queens/'; return false;">Queens</a>
-                    <a href="bronx/" onclick="event.stopPropagation(); window.location.href='bronx/'; return false;">Bronx</a>
+                    <a href="manhattan/">Manhattan</a>
+                    <a href="brooklyn/">Brooklyn</a>
+                    <a href="queens/">Queens</a>
+                    <a href="bronx/">Bronx</a>
+                    <a href="#" class="modal-trigger" data-modal="reviewsModal">Reviews</a>
+                    <a href="#" class="modal-trigger" data-modal="privacyModal">Privacy Policy</a>
+                    <a href="#" class="modal-trigger" data-modal="termsModal">Terms of Service</a>
                 </div>
                 <p>© 2025 Magic Chef Appliance Repair NYC. All rights reserved.</p>
-                <p>Certified Service Provider</p>
+                <p>Licensed and Insured • Factory Certified Technicians • Same-Day Service Available</p>
             </div>
         </div>
     </footer>
@@ -2630,11 +2633,66 @@
         </div>
     </div>
 
+    <!-- Privacy Policy Modal -->
+    <div class="modal-card" id="privacyModal">
+        <div class="modal-header">
+            <h2>Privacy Policy</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p><strong>Last Updated: January 2025</strong></p>
+            <p>Magic Chef Appliance Repair NYC ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+
+            <h3>Information We Collect</h3>
+            <p>We may collect information about you in a variety of ways, including:</p>
+            <ul>
+                <li><strong>Personal Data:</strong> Name, email address, phone number, and mailing address that you voluntarily provide when scheduling service or contacting us.</li>
+                <li><strong>Service Information:</strong> Details about your appliances, service history, and repair needs.</li>
+                <li><strong>Usage Data:</strong> Information about how you access and use our website.</li>
+            </ul>
+
+            <h3>How We Use Your Information</h3>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Provide, maintain, and improve our repair services</li>
+                <li>Process and complete service requests</li>
+                <li>Send you service confirmations, updates, and follow-up communications</li>
+                <li>Respond to your comments, questions, and customer service requests</li>
+            </ul>
+
+            <h3>Contact Us</h3>
+            <p>If you have questions about this Privacy Policy, please contact us through our website contact form or call our service line.</p>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal-card" id="termsModal">
+        <div class="modal-header">
+            <h2>Terms of Service</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <p><strong>Last Updated: January 2025</strong></p>
+            <p>Welcome to Magic Chef Appliance Repair NYC. By accessing our website or using our services, you agree to be bound by these Terms of Service.</p>
+
+            <h3>Services</h3>
+            <p>We provide professional appliance repair services for Magic Chef brand appliances in the New York City area, including Manhattan, Brooklyn, Queens, and the Bronx.</p>
+
+            <h3>Governing Law</h3>
+            <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of New York.</p>
+
+            <h3>Contact Us</h3>
+            <p>If you have any questions about these Terms of Service, please contact us through our website contact form or call our service line.</p>
+        </div>
+    </div>
+
     <script>
         // Modal functionality - runs after modal HTML exists
         var modalOverlay = document.getElementById('modalOverlay');
         var reviewsModal = document.getElementById('reviewsModal');
         var writeReviewModal = document.getElementById('writeReviewModal');
+        var privacyModal = document.getElementById('privacyModal');
+        var termsModal = document.getElementById('termsModal');
 
         function openModal(modalId) {
             modalOverlay.classList.add('active');
@@ -2644,6 +2702,8 @@
 
         function closeAllModals() {
             if (modalOverlay) modalOverlay.classList.remove('active');
+            if (privacyModal) privacyModal.classList.remove('active');
+            if (termsModal) termsModal.classList.remove('active');
             if (reviewsModal) reviewsModal.classList.remove('active');
             if (writeReviewModal) writeReviewModal.classList.remove('active');
             document.body.style.overflow = '';
@@ -2721,7 +2781,7 @@
                     window.location.href = 'tel:+1' + this.dataset.num;
                     return;
                 }
-                var digits = [8, 0, 0, 9, 8, 8, 5, 5, 6, 1];
+                var digits = [8, 0, 0, 7, 7, 8, 3, 5, 7, 2];
                 var num = digits.join('');
                 var formatted = '+1 (' + num.slice(0,3) + ') ' + num.slice(3,6) + '-' + num.slice(6);
                 this.innerHTML = formatted;
