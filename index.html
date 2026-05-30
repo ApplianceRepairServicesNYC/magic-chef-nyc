@@ -1594,7 +1594,80 @@
             </div>
         </div>
     </section>
-    <section class="alt" id="contact">
+<section class="trust-badges-section">
+        <h2>Certified Magic Chef Appliance Repair Service</h2>
+        <div class="trust-badges-container">
+            <div class="trust-badge guarantee-badge guarantee-background">
+                <i class="fas fa-money-bill-alt icon"></i>
+                <div class="title">Money-Back Guarantee</div>
+                <div class="description">Full refund if we can't repair your appliance.</div>
+                <button class="toggle-button" data-title="Money-Back Guarantee" data-details="We understand the frustration of dealing with companies that charge for repairs they can't complete. That's why we offer a 100% Money-Back Guarantee. If we are unable to complete your appliance repair, you will receive a full refund—no questions asked.">Learn More</button>
+            </div>
+            <div class="trust-badge experience-badge experience-background">
+                <i class="fas fa-tools icon"></i>
+                <div class="title">25+ Years Experience</div>
+                <div class="description">Expert Magic Chef repair since 1999.</div>
+                <button class="toggle-button" data-title="25+ Years Experience" data-details="With over two decades of experience, our team has mastered Magic Chef appliance repair. We've tackled every challenge, from vintage models to the latest smart appliances, ensuring your appliances run smoothly.">Learn More</button>
+            </div>
+            <div class="trust-badge same-day-badge same-day-background">
+                <i class="fas fa-clock icon"></i>
+                <div class="title">Same-Day Service</div>
+                <div class="description">Fast repairs in hours, not days.</div>
+                <button class="toggle-button" data-title="Same-Day Service" data-details="We know a broken appliance disrupts your daily routine, so we prioritize speed without sacrificing quality. Our same-day service ensures technicians arrive promptly, equipped to diagnose and fix your Magic Chef appliance in hours.">Learn More</button>
+            </div>
+            <div class="trust-badge complete-day-badge complete-day-background">
+                <i class="fas fa-check-circle icon"></i>
+                <div class="title">85% Same-Day Repairs</div>
+                <div class="description">Most repairs done the day you call.</div>
+                <button class="toggle-button" data-title="85% Same-Day Repairs" data-details="Our efficiency sets us apart—85% of our repairs are completed the same day you reach out. We stock common Magic Chef parts and equip our technicians with advanced tools to resolve issues on the spot.">Learn More</button>
+            </div>
+            <div class="trust-badge warranty-badge warranty-background">
+                <i class="fas fa-shield-alt icon"></i>
+                <div class="title">Warranty on All Repairs</div>
+                <div class="description">All repairs backed by our warranty.</div>
+                <button class="toggle-button" data-title="Warranty on All Repairs" data-details="Every repair we perform comes with a comprehensive warranty, ensuring your peace of mind. If an issue arises from our work, we'll return to fix it at no extra cost.">Learn More</button>
+            </div>
+            <div class="trust-badge background-checked-badge background-checked-background">
+                <i class="fas fa-user-check icon"></i>
+                <div class="title">Background Checked</div>
+                <div class="description">Screened for your safety.</div>
+                <button class="toggle-button" data-title="Background Checked Technicians" data-details="Your safety is our priority, which is why all our technicians undergo thorough background checks. We hire only trustworthy professionals who are not only skilled but also respectful of your home.">Learn More</button>
+            </div>
+            <div class="trust-badge weekend-badge weekend-background">
+                <i class="fas fa-calendar-alt icon"></i>
+                <div class="title">Weekend Service</div>
+                <div class="description">Repairs available on weekends.</div>
+                <button class="toggle-button" data-title="Weekend Service Available" data-details="Life doesn't pause on weekends, and neither do we. Our weekend service ensures you can schedule repairs at your convenience, without disrupting your workweek.">Learn More</button>
+            </div>
+            <div class="trust-badge parts-badge parts-background">
+                <i class="fas fa-cogs icon"></i>
+                <div class="title">Genuine Magic Chef Parts</div>
+                <div class="description">OEM parts at fair prices.</div>
+                <button class="toggle-button" data-title="Genuine Magic Chef Parts" data-details="We use only genuine Magic Chef parts, ensuring optimal performance and longevity. Our transparent pricing means you get high-quality components without inflated costs.">Learn More</button>
+            </div>
+            <div class="trust-badge insured-badge insured-background">
+                <i class="fas fa-umbrella icon"></i>
+                <div class="title">Fully Insured</div>
+                <div class="description">Coverage for property damages.</div>
+                <button class="toggle-button" data-title="Fully Insured" data-details="We are fully insured for property damages, providing you with peace of mind during every repair. Our comprehensive insurance coverage ensures that any unexpected incidents are handled responsibly.">Learn More</button>
+            </div>
+            <div class="trust-badge safety-badge safety-background">
+                <i class="fas fa-hard-hat icon"></i>
+                <div class="title">Safety & Protection</div>
+                <div class="description">Floor & area protection used.</div>
+                <button class="toggle-button" data-title="Safety & Protection" data-details="We prioritize your safety and the protection of your home. Our technicians use floor coverings and area protection to prevent any damage during repairs.">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Badge Modal -->
+    <div class="badge-modal" id="badgeModal">
+        <button class="badge-modal-close" onclick="closeBadgeModal()">&times;</button>
+        <h3 class="badge-modal-title" id="badgeModalTitle"></h3>
+        <div class="badge-modal-content" id="badgeModalContent"></div>
+    </div>
+    <div class="badge-modal-overlay" id="badgeModalOverlay" onclick="closeBadgeModal()"></div>
+<section class="alt" id="contact">
         <div class="container">
             <section id="sa-service-areas">
                 <h2>Service Areas – New York City</h2>
@@ -1897,80 +1970,6 @@
         </div>
     </div>
     </main>
-
-    <section class="trust-badges-section">
-        <h2>Certified Magic Chef Appliance Repair Service</h2>
-        <div class="trust-badges-container">
-            <div class="trust-badge guarantee-badge guarantee-background">
-                <i class="fas fa-money-bill-alt icon"></i>
-                <div class="title">Money-Back Guarantee</div>
-                <div class="description">Full refund if we can't repair your appliance.</div>
-                <button class="toggle-button" data-title="Money-Back Guarantee" data-details="We understand the frustration of dealing with companies that charge for repairs they can't complete. That's why we offer a 100% Money-Back Guarantee. If we are unable to complete your appliance repair, you will receive a full refund—no questions asked.">Learn More</button>
-            </div>
-            <div class="trust-badge experience-badge experience-background">
-                <i class="fas fa-tools icon"></i>
-                <div class="title">25+ Years Experience</div>
-                <div class="description">Expert Magic Chef repair since 1999.</div>
-                <button class="toggle-button" data-title="25+ Years Experience" data-details="With over two decades of experience, our team has mastered Magic Chef appliance repair. We've tackled every challenge, from vintage models to the latest smart appliances, ensuring your appliances run smoothly.">Learn More</button>
-            </div>
-            <div class="trust-badge same-day-badge same-day-background">
-                <i class="fas fa-clock icon"></i>
-                <div class="title">Same-Day Service</div>
-                <div class="description">Fast repairs in hours, not days.</div>
-                <button class="toggle-button" data-title="Same-Day Service" data-details="We know a broken appliance disrupts your daily routine, so we prioritize speed without sacrificing quality. Our same-day service ensures technicians arrive promptly, equipped to diagnose and fix your Magic Chef appliance in hours.">Learn More</button>
-            </div>
-            <div class="trust-badge complete-day-badge complete-day-background">
-                <i class="fas fa-check-circle icon"></i>
-                <div class="title">85% Same-Day Repairs</div>
-                <div class="description">Most repairs done the day you call.</div>
-                <button class="toggle-button" data-title="85% Same-Day Repairs" data-details="Our efficiency sets us apart—85% of our repairs are completed the same day you reach out. We stock common Magic Chef parts and equip our technicians with advanced tools to resolve issues on the spot.">Learn More</button>
-            </div>
-            <div class="trust-badge warranty-badge warranty-background">
-                <i class="fas fa-shield-alt icon"></i>
-                <div class="title">Warranty on All Repairs</div>
-                <div class="description">All repairs backed by our warranty.</div>
-                <button class="toggle-button" data-title="Warranty on All Repairs" data-details="Every repair we perform comes with a comprehensive warranty, ensuring your peace of mind. If an issue arises from our work, we'll return to fix it at no extra cost.">Learn More</button>
-            </div>
-            <div class="trust-badge background-checked-badge background-checked-background">
-                <i class="fas fa-user-check icon"></i>
-                <div class="title">Background Checked</div>
-                <div class="description">Screened for your safety.</div>
-                <button class="toggle-button" data-title="Background Checked Technicians" data-details="Your safety is our priority, which is why all our technicians undergo thorough background checks. We hire only trustworthy professionals who are not only skilled but also respectful of your home.">Learn More</button>
-            </div>
-            <div class="trust-badge weekend-badge weekend-background">
-                <i class="fas fa-calendar-alt icon"></i>
-                <div class="title">Weekend Service</div>
-                <div class="description">Repairs available on weekends.</div>
-                <button class="toggle-button" data-title="Weekend Service Available" data-details="Life doesn't pause on weekends, and neither do we. Our weekend service ensures you can schedule repairs at your convenience, without disrupting your workweek.">Learn More</button>
-            </div>
-            <div class="trust-badge parts-badge parts-background">
-                <i class="fas fa-cogs icon"></i>
-                <div class="title">Genuine Magic Chef Parts</div>
-                <div class="description">OEM parts at fair prices.</div>
-                <button class="toggle-button" data-title="Genuine Magic Chef Parts" data-details="We use only genuine Magic Chef parts, ensuring optimal performance and longevity. Our transparent pricing means you get high-quality components without inflated costs.">Learn More</button>
-            </div>
-            <div class="trust-badge insured-badge insured-background">
-                <i class="fas fa-umbrella icon"></i>
-                <div class="title">Fully Insured</div>
-                <div class="description">Coverage for property damages.</div>
-                <button class="toggle-button" data-title="Fully Insured" data-details="We are fully insured for property damages, providing you with peace of mind during every repair. Our comprehensive insurance coverage ensures that any unexpected incidents are handled responsibly.">Learn More</button>
-            </div>
-            <div class="trust-badge safety-badge safety-background">
-                <i class="fas fa-hard-hat icon"></i>
-                <div class="title">Safety & Protection</div>
-                <div class="description">Floor & area protection used.</div>
-                <button class="toggle-button" data-title="Safety & Protection" data-details="We prioritize your safety and the protection of your home. Our technicians use floor coverings and area protection to prevent any damage during repairs.">Learn More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Badge Modal -->
-    <div class="badge-modal" id="badgeModal">
-        <button class="badge-modal-close" onclick="closeBadgeModal()">&times;</button>
-        <h3 class="badge-modal-title" id="badgeModalTitle"></h3>
-        <div class="badge-modal-content" id="badgeModalContent"></div>
-    </div>
-    <div class="badge-modal-overlay" id="badgeModalOverlay" onclick="closeBadgeModal()"></div>
 
     <footer>
         <div class="footer-main">
