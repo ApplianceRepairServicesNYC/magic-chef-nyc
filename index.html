@@ -2566,8 +2566,91 @@
                 closeAllModals();
             }
         });
+    </script>
 
-        // Modal functionality
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Reviews Modal -->
+    <div class="modal-card" id="reviewsModal">
+        <div class="modal-header">
+            <h2>Customer Reviews</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; margin-bottom: 25px;">
+                <div style="font-size: 48px; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+                <h3 style="color: var(--blue); margin-bottom: 10px; font-size: 24px;">Trusted by NYC Homeowners</h3>
+                <p style="color: #666; font-size: 16px;">Hundreds of satisfied customers across all five boroughs</p>
+            </div>
+            <div style="display: grid; gap: 20px;">
+                <div style="background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px;">
+                    <div style="display: flex; gap: 5px; margin-bottom: 10px; color: #FFD700;">★★★★★</div>
+                    <p style="color: #333; margin-bottom: 10px;">"Same day service! My Magic Chef refrigerator stopped cooling and they had it fixed within hours. Professional and reasonably priced."</p>
+                    <p style="color: #666; font-size: 14px; font-weight: 600;">— Michael R., Brooklyn</p>
+                </div>
+                <div style="background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px;">
+                    <div style="display: flex; gap: 5px; margin-bottom: 10px; color: #FFD700;">★★★★★</div>
+                    <p style="color: #333; margin-bottom: 10px;">"Excellent experience with my Magic Chef oven repair. The technician was knowledgeable and explained everything. Highly recommend!"</p>
+                    <p style="color: #666; font-size: 14px; font-weight: 600;">— Sarah L., Manhattan</p>
+                </div>
+                <div style="background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px;">
+                    <div style="display: flex; gap: 5px; margin-bottom: 10px; color: #FFD700;">★★★★★</div>
+                    <p style="color: #333; margin-bottom: 10px;">"They fixed my Magic Chef washer quickly. Fair pricing and great communication. Will definitely use again."</p>
+                    <p style="color: #666; font-size: 14px; font-weight: 600;">— David K., Queens</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
+                <button id="writeReviewBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
+                <p style="margin-top: 12px; color: #666; font-size: 14px;">Had a great experience? Help others by sharing your story!</p>
+            </div>
+            <div style="text-align: center; margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
+                <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
+                <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across NYC!</p>
+                <button id="reviewsCallBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Call Toll-Free</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Write Review Modal -->
+    <div class="modal-card" id="writeReviewModal" style="max-width: 500px;">
+        <div class="modal-header">
+            <h2>Write a Review</h2>
+            <button class="modal-close" data-close="modal">&times;</button>
+        </div>
+        <div class="modal-content">
+            <form id="reviewForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Name *</label>
+                    <input type="text" id="reviewName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Rating *</label>
+                    <div id="starRating" style="display: flex; gap: 8px; font-size: 32px; cursor: pointer;">
+                        <span class="star" data-rating="1">☆</span>
+                        <span class="star" data-rating="2">☆</span>
+                        <span class="star" data-rating="3">☆</span>
+                        <span class="star" data-rating="4">☆</span>
+                        <span class="star" data-rating="5">☆</span>
+                    </div>
+                    <input type="hidden" id="reviewRating" value="0">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Review *</label>
+                    <textarea id="reviewText" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;" placeholder="Tell us about your experience..."></textarea>
+                </div>
+                <button type="submit" style="width: 100%; background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Submit Review</button>
+            </form>
+            <div id="reviewThankYou" style="display: none; text-align: center; padding: 40px 20px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
+                <h3 style="color: #1a1a2e; margin-bottom: 15px;">Thank You for Your Review!</h3>
+                <p style="color: #666;">We appreciate you taking the time to share your experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality - runs after modal HTML exists
         var modalOverlay = document.getElementById('modalOverlay');
         var reviewsModal = document.getElementById('reviewsModal');
         var writeReviewModal = document.getElementById('writeReviewModal');
@@ -2666,87 +2749,6 @@
             });
         }
     </script>
-
-    <!-- Modal Overlay -->
-    <div class="modal-overlay" id="modalOverlay"></div>
-
-    <!-- Reviews Modal -->
-    <div class="modal-card" id="reviewsModal">
-        <div class="modal-header">
-            <h2>Customer Reviews</h2>
-            <button class="modal-close" data-close="modal">&times;</button>
-        </div>
-        <div class="modal-content">
-            <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 12px; margin-bottom: 25px;">
-                <div style="font-size: 48px; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
-                <h3 style="color: var(--blue); margin-bottom: 10px; font-size: 24px;">Trusted by NYC Homeowners</h3>
-                <p style="color: #666; font-size: 16px;">Hundreds of satisfied customers across all five boroughs</p>
-            </div>
-            <div style="display: grid; gap: 20px;">
-                <div style="background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; gap: 5px; margin-bottom: 10px; color: #FFD700;">★★★★★</div>
-                    <p style="color: #333; margin-bottom: 10px;">"Same day service! My Magic Chef refrigerator stopped cooling and they had it fixed within hours. Professional and reasonably priced."</p>
-                    <p style="color: #666; font-size: 14px; font-weight: 600;">— Michael R., Brooklyn</p>
-                </div>
-                <div style="background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; gap: 5px; margin-bottom: 10px; color: #FFD700;">★★★★★</div>
-                    <p style="color: #333; margin-bottom: 10px;">"Excellent experience with my Magic Chef oven repair. The technician was knowledgeable and explained everything. Highly recommend!"</p>
-                    <p style="color: #666; font-size: 14px; font-weight: 600;">— Sarah L., Manhattan</p>
-                </div>
-                <div style="background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 20px;">
-                    <div style="display: flex; gap: 5px; margin-bottom: 10px; color: #FFD700;">★★★★★</div>
-                    <p style="color: #333; margin-bottom: 10px;">"They fixed my Magic Chef washer quickly. Fair pricing and great communication. Will definitely use again."</p>
-                    <p style="color: #666; font-size: 14px; font-weight: 600;">— David K., Queens</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
-                <button id="writeReviewBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 35px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Write Your Review</button>
-                <p style="margin-top: 12px; color: #666; font-size: 14px;">Had a great experience? Help others by sharing your story!</p>
-            </div>
-            <div style="text-align: center; margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px;">
-                <p style="color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 5px;">Ready to Book Your Repair?</p>
-                <p style="color: #aaa; font-size: 14px; margin-bottom: 15px;">Same-day service available across NYC!</p>
-                <button id="reviewsCallBtn" style="background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px 40px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Call Toll-Free</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Write Review Modal -->
-    <div class="modal-card" id="writeReviewModal" style="max-width: 500px;">
-        <div class="modal-header">
-            <h2>Write a Review</h2>
-            <button class="modal-close" data-close="modal">&times;</button>
-        </div>
-        <div class="modal-content">
-            <form id="reviewForm">
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Name *</label>
-                    <input type="text" id="reviewName" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Rating *</label>
-                    <div id="starRating" style="display: flex; gap: 8px; font-size: 32px; cursor: pointer;">
-                        <span class="star" data-rating="1">☆</span>
-                        <span class="star" data-rating="2">☆</span>
-                        <span class="star" data-rating="3">☆</span>
-                        <span class="star" data-rating="4">☆</span>
-                        <span class="star" data-rating="5">☆</span>
-                    </div>
-                    <input type="hidden" id="reviewRating" value="0">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #333;">Your Review *</label>
-                    <textarea id="reviewText" required rows="5" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box;" placeholder="Tell us about your experience..."></textarea>
-                </div>
-                <button type="submit" style="width: 100%; background: linear-gradient(45deg, var(--red), #5a0f25); color: white; border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Submit Review</button>
-            </form>
-            <div id="reviewThankYou" style="display: none; text-align: center; padding: 40px 20px;">
-                <div style="font-size: 60px; margin-bottom: 20px;">✓</div>
-                <h3 style="color: #1a1a2e; margin-bottom: 15px;">Thank You for Your Review!</h3>
-                <p style="color: #666;">We appreciate you taking the time to share your experience.</p>
-            </div>
-        </div>
-    </div>
 
 </body>
 </html>
